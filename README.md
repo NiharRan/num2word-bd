@@ -22,8 +22,31 @@ php composer.phar install
 
 Please see configuration section below for configuring.
 
+## Usage
+To convert a number to words, follow these steps:
+```php
+use Nihar\Num2wordBd\Formatter;
 
+// Instantiate the Formatter class
+$formatter = new Formatter();
 
+// Call the format method and pass the number you want to convert
+$result = $formatter->format(1234.56);
+
+echo $result; // Outputs: "One Thousand Two Hundred Thirty Four Taka And Fifty Six Paysha"
+```
+
+## Available Methods
+* format($number): Converts the provided number into its word representation.
+
+## Contributing
+Contributions are welcome! Here's how you can contribute to this project:
+
+1. Fork the repository
+2. Create your feature branch (git checkout -b feature/YourFeature)
+3. Commit your changes (git commit -m 'Add some feature')
+4. Push to the branch (git push origin feature/YourFeature)
+5. Open a pull request
 
 ## License
 The MIT License (MIT): Please see the [License File](LICENSE)

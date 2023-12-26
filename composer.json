@@ -2,10 +2,10 @@
     "name": "nihar/num2word-bd",
     "description": "This package convert number to word according to Bangladeshi numeric system",
     "type": "composer-plugin",
-    "autoload": {
-        "psr-4": {
-            "Nihar\\Num2wordBd\\": "src/"
-        }
+    "keywords": ["php", "number", "converter", "bangla", "bd"],
+    "license": "MIT",
+    "require": {
+        "php": "^8.0"
     },
     "authors": [
         {
@@ -13,5 +13,39 @@
             "email": "niharranjandasmu@gmail.com"
         }
     ],
-    "require": {}
+    "require-dev": {
+        "laravel/pint": "^1.5",
+        "pestphp/pest": "^1.23",
+        "rector/rector": "^0.18.13"
+    },
+    "autoload": {
+        "psr-4": {
+            "Nihar\\Num2wordBd\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true,
+    "scripts": {
+        "refacto": "rector",
+        "lint": "pint",
+        "test:refacto": "rector --dry-run",
+        "test:lint": "pint --test",
+        "test:unit": "pest --colors=always",
+        "test": [
+            "@test:refacto",
+            "@test:lint",
+            "@test:types",
+            "@test:unit"
+        ]
+    },
+    "config": {
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    }
 }

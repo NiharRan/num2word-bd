@@ -1,7 +1,9 @@
 <?php
 
+use Nihar\Num2wordBd\Formatter;
+
 require_once 'vendor/autoload.php';
 
-$formatter = new \Nihar\Num2wordBd\Formatter();
+$formatter = new Formatter();
 
-echo $formatter->format(147570.12);
+echo $formatter->format(17647570);

@@ -6,15 +6,11 @@ class Formatter
 {
     /**
      * Initialize the number property
-     *
-     * @var int|float
      */
     private int|float $number = 0;
 
     /**
      * The fraction point of provided number
-     *
-     * @var int
      */
     private int $fraction = 0;
 
@@ -89,11 +85,10 @@ class Formatter
     {
     }
 
-
     /**
      * Formats the provided number into its word representation.
      *
-     * @param int|float $number - The number to be converted into words.
+     * @param  int|float  $number - The number to be converted into words.
      * @return string - The word representation of the provided number.
      */
     public function format(int|float $number): string
@@ -141,7 +136,7 @@ class Formatter
     /**
      * Generates word representation for a given number.
      *
-     * @param int $number - The number to convert into words.
+     * @param  int  $number - The number to convert into words.
      *
      * This method converts the provided number into its word representation
      * based on predefined divisors and arrays of unique words and tens. It iterates
@@ -198,7 +193,7 @@ class Formatter
     private function splitNumber(): void
     {
         if (is_float($this->number)) {
-            list($n, $f) = explode('.', $this->number);
+            [$n, $f] = explode('.', $this->number);
 
             $this->number = $n;
             $this->fraction = $f;
