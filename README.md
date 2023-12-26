@@ -8,14 +8,9 @@
 For running this example, you need to install `num2word-bd` library before. It can be done by two different methods:
 
 ### 1. Using Composer
-You can install the library via [Composer](https://getcomposer.org/). If you don't already have Composer installed, first install it by following one of these instructions depends on your OS of choice:
-* [Composer installation instruction for Windows](https://getcomposer.org/doc/00-intro.md#installation-windows)
-* [Composer installation instruction for Mac OS X and Linux](https://getcomposer.org/doc/00-intro.md#installation-linux-unix-osx)
-
-After composer is installed, Then run the following command to install the Num2word-BD library:
-
+You can install the library via [Composer](https://getcomposer.org/).
 ```
-php composer.phar install
+composer require nihar/num2word-bd
 ```
 
 Please see configuration section below for configuring.
