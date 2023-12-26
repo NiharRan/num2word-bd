@@ -1,0 +1,17 @@
+{
+    "name": "nihar/num2word-bd",
+    "description": "This package convert number to word according to Bangladeshi numeric system",
+    "type": "composer-plugin",
+    "autoload": {
+        "psr-4": {
+            "Nihar\\Num2wordBd\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Nihar Ranjan Das",
+            "email": "niharranjandasmu@gmail.com"
+        }
+    ],
+    "require": {}
+}
