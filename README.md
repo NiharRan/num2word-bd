@@ -1,7 +1,5 @@
 # About Num2word-BD
-**[NUM2WORD-BD](https://github.com/NiharRan/num2word-bd)** is a library for connecting with Omise Payment Gateway services (see more https://docs.omise.co/).
-
-All files in this directory will show you about the best pratices that you should do when implementing  **omise-php** into your project.
+**[NUM2WORD-BD](https://github.com/NiharRan/num2word-bd)** is a library for number conversion from number to word according to Bangladeshi numeric system 
 
 ## Requirements
 - PHP 8.0 and above.
@@ -31,13 +29,20 @@ use Nihar\Num2wordBd\Formatter;
 $formatter = new Formatter();
 
 // Call the format method and pass the number you want to convert
-$result = $formatter->format(1234.56);
+$result = $formatter
+    ->currency('TK')
+    ->fractionCurrency('Paysa')
+    ->joinSign('&')
+    ->format(1234.56);
 
-echo $result; // Outputs: "One Thousand Two Hundred Thirty Four Taka And Fifty Six Paysha"
+echo $result; // Outputs: "One Thousand Two Hundred Thirty Four TK & Fifty Six Paysa"
 ```
 
 ## Available Methods
 * format($number): Converts the provided number into its word representation.
+* currency($sign): Set the currency sign for the whole number part.
+* fractionCurrency($sign): Set the currency sign for the fractional part.
+* joinSign($sign): Set the sign to join the whole and fractional parts.
 
 ## Contributing
 Contributions are welcome! Here's how you can contribute to this project:

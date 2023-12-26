@@ -15,6 +15,21 @@ class Formatter
     private int $fraction = 0;
 
     /**
+     * The sign of taka
+     */
+    private string $sign = 'Taka';
+
+    /**
+     * The sign of paysa
+     */
+    private string $fractionSign = 'Paysha';
+
+    /**
+     * The sign of the join of whole and fractional parts
+     */
+    private string $andSign = 'And';
+
+    /**
      * Unique words of english numbers
      *
      * @var array|string[]
@@ -86,6 +101,45 @@ class Formatter
     }
 
     /**
+     * Set the currency sign for the whole number part.
+     *
+     * @param string $sign - The currency sign to be used for the whole number part.
+     * @return self - Returns the updated instance of the class.
+     */
+    public function currency(string $sign): self
+    {
+        $this->sign = $sign;
+
+        return $this;
+    }
+
+    /**
+     * Set the currency sign for the fractional part.
+     *
+     * @param string $fractionSign - The currency sign to be used for the fractional part.
+     * @return self - Returns the updated instance of the class.
+     */
+    public function fractionCurrency(string $fractionSign): self
+    {
+        $this->fractionSign = $fractionSign;
+
+        return $this;
+    }
+
+    /**
+     * Set the sign to join the whole and fractional parts.
+     *
+     * @param string $andSign - The sign to join the whole and fractional parts.
+     * @return self - Returns the updated instance of the class.
+     */
+    public function joinSign(string $andSign): self
+    {
+        $this->andSign = $andSign;
+
+        return $this;
+    }
+
+    /**
      * Formats the provided number into its word representation.
      *
      * @param  int|float  $number - The number to be converted into words.
@@ -108,18 +162,18 @@ class Formatter
         /**
          * Add currency for number part
          */
-        $this->words[] = 'Taka';
+        $this->words[] = $this->sign;
 
         /**
          * If there is a non-zero fraction, add words for it
          */
         if ($this->fraction > 0) {
-            $this->words[] = 'And';
+            $this->words[] = $this->andSign;
             $this->generateWord($this->fraction);
             /**
              * Fractional currency
              */
-            $this->words[] = 'Paysha';
+            $this->words[] = $this->fractionSign;
         }
 
         /**
