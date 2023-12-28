@@ -46,10 +46,5 @@
         "allow-plugins": {
             "pestphp/pest-plugin": true
         }
-    },
-    "extra": {
-        "branch-alias": {
-            "dev-master": "1.x-dev"
-        }
     }
 }
