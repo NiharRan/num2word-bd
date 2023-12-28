@@ -1,7 +1,6 @@
 {
     "name": "nihar/num2word-bd",
     "description": "This package convert number to word according to Bangladeshi numeric system",
-    "type": "composer-plugin",
     "keywords": ["php", "number", "converter", "bangla", "bd"],
     "license": "MIT",
     "require": {
